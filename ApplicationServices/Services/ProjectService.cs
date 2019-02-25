@@ -3,6 +3,7 @@ using ApplicationServices.Models;
 using Core.Bus;
 using Domain.Commands.Project;
 using Domain.Interfaces;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,10 @@ namespace ApplicationServices.Services
 {
     public class ProjectService : IProjectService
     {
-        private readonly IProjectRepository _projectRepository;
+        private readonly IRepository<Project> _projectRepository;
         private readonly IMediatorHandler _bus;
 
-        public ProjectService(IProjectRepository projectRepository, IMediatorHandler bus)
+        public ProjectService(IRepository<Project> projectRepository, IMediatorHandler bus)
         {
             _projectRepository = projectRepository;
             _bus = bus;
@@ -57,7 +58,7 @@ namespace ApplicationServices.Services
         {
             // you can use automapper to map source and destination 
 
-            var project = _projectRepository.GetByName(name);
+            var project = _projectRepository.GetFirstOrDefault(c=> c.Name == name);
             if (project != null)
                 return new ProjectModel()
                 {

@@ -29,19 +29,8 @@ namespace Web.Controllers
         protected  IActionResult Result(object model = null)
         {
             if (!_notifications.HasNotifications())
-            {
-                return Ok(new
-                {
-                    success = true,
-                    data = model
-                });
-            }
-
-            return BadRequest(new
-            {
-                success = false,
-                errors = _notifications.GetNotifications().Select(n => n.Value)
-            });
+                return Ok(model);
+            return BadRequest(_notifications.GetNotifications().Select(n => n.Value));
         }
 
         /// <summary>

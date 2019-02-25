@@ -29,15 +29,15 @@ namespace infrastructure.IOC
             engine.Initialize(services);
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IMediatorHandler, Bus>();
+            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
-            services.AddScoped<INotificationHandler<AddNewProjectEvent>, ProjectEventHandler>();
-            services.AddScoped<INotificationHandler<UpdateProjectEvent>, ProjectEventHandler>();
-            services.AddScoped<INotificationHandler<DeleteProjectEvent>, ProjectEventHandler>();
+            services.AddScoped<INotificationHandler<ProjectAddedEvent>, ProjectEventHandler>();
+            services.AddScoped<INotificationHandler<ProjectUpdatedEvent>, ProjectEventHandler>();
+            services.AddScoped<INotificationHandler<ProjectDeletedEvent>, ProjectEventHandler>();
             services.AddScoped<IRequestHandler<AddNewProjectCommand, bool>, ProjectCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateProjectCommand, bool>, ProjectCommandHandler>();
             services.AddScoped<IRequestHandler<DeleteProjectCommand, bool>, ProjectCommandHandler>();
-            services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IUnitOfWork, UntitOfWork>();
             services.AddScoped<MiniTaskContext>();
             services.AddDbContext<MiniTaskContext>(options =>

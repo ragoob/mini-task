@@ -1,4 +1,4 @@
-﻿using Domain.Validation.Project;
+﻿using Domain.Validation.Projects;
 using System;
 using System.Collections.Generic;
 using System.Text;

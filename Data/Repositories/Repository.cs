@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Data.Repositories
@@ -29,10 +30,7 @@ namespace Data.Repositories
             _entities.AddRange(entitiesList);
         }
 
-        public IQueryable<TEntity> GetAll()
-        {
-            return _entities;
-        }
+       
 
         public TEntity GetById(int id)
         {
@@ -58,6 +56,18 @@ namespace Data.Repositories
         {
             _miniTaskContext.Dispose();
             GC.SuppressFinalize(this);
+        }
+
+        public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> predicate = null)
+        {
+            return predicate  != null ? _entities.AsNoTracking()
+                 .Where(predicate) : _entities.AsNoTracking();
+          
+        }
+
+        public TEntity GetFirstOrDefault(Expression<Func<TEntity, bool>> predicate)
+        {
+            return _entities.FirstOrDefault(predicate);
         }
     }
 }
