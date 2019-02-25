@@ -3,11 +3,11 @@ using Domain.Interfaces;
 
 namespace Data.UnityOfWork
 {
-    public class UntityOfWork : IUnitOfWork
+    public class UntitOfWork : IUnitOfWork
     {
         private readonly MiniTaskContext _miniTaskContext;
         
-        public UntityOfWork(MiniTaskContext miniTaskContext)
+        public UntitOfWork(MiniTaskContext miniTaskContext)
         {
             _miniTaskContext = miniTaskContext;
         }

@@ -38,7 +38,7 @@ namespace infrastructure.IOC
             services.AddScoped<IRequestHandler<UpdateProjectCommand, bool>, ProjectCommandHandler>();
             services.AddScoped<IRequestHandler<DeleteProjectCommand, bool>, ProjectCommandHandler>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
-            services.AddScoped<IUnitOfWork, UntityOfWork>();
+            services.AddScoped<IUnitOfWork, UntitOfWork>();
             services.AddScoped<MiniTaskContext>();
             services.AddDbContext<MiniTaskContext>(options =>
           options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
