@@ -34,7 +34,7 @@ namespace Domain.CommandHandlers
             if (_notifications.HasNotifications()) return false;
             if (_unitOfWork.Commit()) return true;
 
-            _bus.RaiseEvent(new DomainNotification("Save changes", "error in during save changes"));
+            _bus.RaiseEvent(new DomainNotification("Save changes", "error  during saving changes"));
             return false;
         }
     }

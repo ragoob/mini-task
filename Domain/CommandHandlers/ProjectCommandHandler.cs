@@ -57,7 +57,6 @@ namespace Domain.CommandHandlers
             }
 
             var project = new Project(default(int), request.Name, request.Description, request.IsPrivate);
-           
             _projectRepository.Add(project);
             if (Commit())
             {
