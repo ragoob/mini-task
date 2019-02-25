@@ -33,6 +33,6 @@ Mini task is open source Project written in .net core to handle simple and small
 <li> Complete clean Architecture  with responsibility separation and concerns</li>
 <li> DDD</li>
 <li>CQRS </li>
-<li>Unity of work </li>
+<li>Unit of work </li>
 <li> repository pattern </li>
  </ul>
