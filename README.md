@@ -7,7 +7,7 @@ Mini task is open source Project written in .net core to handle simple and small
 <li>Create Projects  </li>
 <li>  Add iterations and areas</li>
 <li>  Create user stories - tasks  </li>
-<li>  assign work item - activate - close work items </li>
+<li>  assign work item - change status like active - close work items </li>
   </ul>
   
 
