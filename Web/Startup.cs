@@ -38,7 +38,7 @@ namespace Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMediatR(typeof(Startup));
-            return ServiceRegisterar.RegisterDependencies(services, Configuration);
+            return ServiceRegistrar.RegisterDependencies(services, Configuration);
 
         }
 

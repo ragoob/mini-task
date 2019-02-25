@@ -21,7 +21,7 @@ using System;
 
 namespace infrastructure.IOC
 {
-    public class ServiceRegisterar
+    public class ServiceRegistrar
     {
         public static IServiceProvider RegisterDependencies(IServiceCollection services, IConfiguration configuration)
         {
