@@ -43,6 +43,7 @@ namespace Infrastructure.Extentions
         public IServiceProvider ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
 
+            _serviceProvider = services.BuildServiceProvider();
             return _serviceProvider;
             
           

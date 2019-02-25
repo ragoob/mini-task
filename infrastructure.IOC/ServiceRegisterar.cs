@@ -11,6 +11,7 @@ using Domain.EventHandlers;
 using Domain.Events;
 using Domain.Interfaces;
 using infrastructure.Buses;
+using Infrastructure.Extentions;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,8 @@ namespace infrastructure.IOC
     {
         public static IServiceProvider RegisterDependencies(IServiceCollection services, IConfiguration configuration)
         {
-
+            var engine = EngineContext.Create();
+            engine.Initialize(services);
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IMediatorHandler, Bus>();
             services.AddScoped<IProjectService, ProjectService>();
@@ -40,6 +42,7 @@ namespace infrastructure.IOC
             services.AddScoped<MiniTaskContext>();
             services.AddDbContext<MiniTaskContext>(options =>
           options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+           
             return services.BuildServiceProvider();
         }
     }

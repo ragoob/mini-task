@@ -57,11 +57,7 @@ namespace Domain.CommandHandlers
             }
 
             var project = new Project(Guid.NewGuid(), request.Name, request.Description, request.IsPrivate);
-            var dbProject = _projectRepository.GetByName(request.Name);
-            if (dbProject != null)
-            {
-                _bus.RaiseEvent(new DomainNotification(string.Empty, $"{request.Name} exists "));
-            }
+           
             _projectRepository.Add(project);
             if (Commit())
             {

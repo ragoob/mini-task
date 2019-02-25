@@ -12,9 +12,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApplicationServices\ApplicationServices.csproj" />
-    <ProjectReference Include="..\Bus\infrastructure.EventBus.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\EventBus\infrastructure.EventBus.csproj" />
   </ItemGroup>
 
 </Project>

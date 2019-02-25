@@ -1,5 +1,7 @@
 ﻿using Domain.Commands.Project;
+using Domain.Interfaces;
 using FluentValidation;
+using Infrastructure.Extentions;
 using System;
 
 namespace Domain.Validation.Project
@@ -24,6 +26,21 @@ namespace Domain.Validation.Project
             RuleFor(c => c.Id)
                 .NotEqual(Guid.Empty);
         }
+
+        protected void ValidateNameExist()
+        {
+            RuleFor(c => c.Name)
+                .Custom((n, c) =>
+                {
+                    
+                    if (EngineContext.Current.Resolve<IProjectRepository>().GetByName(n) != null)
+                    {
+                        c.AddFailure($"{n} is Exist type new one");
+                    }
+
+                });
+        }
+
 
 
     }

@@ -35,6 +35,8 @@ namespace Domain.Models
         /// </summary>
         public bool IsPrivate { get; private set; }
 
+     
+
 
     }
 }
