@@ -22,7 +22,6 @@ namespace ApplicationServices.Services
         }
         public void Create(ProjectModel project)
         {
-            var dbProject = _projectRepository.GetByName(project.Name);
             
             // you can use automapper to map source and destination 
             var AddNewCommand = new AddNewProjectCommand(project.Name, project.Description, project.IsPrivate);
