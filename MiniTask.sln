@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationServices", "ApplicationServices\ApplicationServices.csproj", "{96C22643-2E6D-429D-8031-1BE31879DA49}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infrastructure.EventBus", "Bus\infrastructure.EventBus.csproj", "{0087DE71-DC71-44BA-B64E-4063D338E3A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infrastructure.EventBus", "EventBus\infrastructure.EventBus.csproj", "{0087DE71-DC71-44BA-B64E-4063D338E3A9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{51FF0B5E-BE21-4EA0-BC8A-FB31E7EEFF0A}"
 EndProject
