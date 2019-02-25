@@ -24,7 +24,7 @@ namespace Domain.Validation.Project
         protected void ValidateId()
         {
             RuleFor(c => c.Id)
-                .NotEqual(Guid.Empty);
+                .NotEqual(0);
         }
 
         protected void ValidateNameExist()

@@ -28,7 +28,7 @@ namespace ApplicationServices.Services
             _bus.SendCommand(AddNewCommand);
         }
 
-        public void Delete(Guid id)
+        public void Delete(int id)
         {
             // you can use automapper to map source and destination 
 
@@ -36,7 +36,7 @@ namespace ApplicationServices.Services
             _bus.SendCommand(DeleteCommand);
         }
 
-        public ProjectModel GetById(Guid id)
+        public ProjectModel GetById(int id)
         {
             // you can use automapper to map source and destination 
 

@@ -53,8 +53,8 @@ namespace Web.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id:guid}")]
-        public void Delete(Guid id)
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
             _projectService.Delete(id);
         }

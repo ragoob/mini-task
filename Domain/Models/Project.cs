@@ -7,7 +7,7 @@ namespace Domain.Models
 {
    public class Project : Entity
     {
-        public Project(Guid id ,string name ,string description,bool isPrivate)
+        public Project(int id ,string name ,string description,bool isPrivate)
         {
             Id = id;
             Name = name;

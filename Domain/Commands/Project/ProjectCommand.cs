@@ -8,7 +8,7 @@ namespace Domain.Commands.Project
 {
    public abstract class ProjectCommand : Command
     {
-        public Guid Id { get; protected set; }
+        public int Id { get; protected set; }
         public string Name { get; protected set; }
 
         /// <summary>

@@ -11,7 +11,7 @@ namespace Data.Mapping
     {
         public override void Configure(EntityTypeBuilder<Project> builder)
         {
-            builder.ToTable("Projects");
+            builder.ToTable("Projects","dbo");
             builder.Property(p => p.Id)
                 .HasColumnName("Id");
 

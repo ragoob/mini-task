@@ -56,12 +56,12 @@ namespace Domain.CommandHandlers
                 return Task.FromResult(false);
             }
 
-            var project = new Project(Guid.NewGuid(), request.Name, request.Description, request.IsPrivate);
+            var project = new Project(default(int), request.Name, request.Description, request.IsPrivate);
            
             _projectRepository.Add(project);
             if (Commit())
             {
-                _bus.RaiseEvent(new AddNewProjectEvent(request.Id, request.Name, request.Description, request.IsPrivate));
+                _bus.RaiseEvent(new AddNewProjectEvent(request.AggregateId, request.Name, request.Description, request.IsPrivate));
 
             }
            

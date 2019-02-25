@@ -9,7 +9,7 @@ namespace Core.Models
         /// <summary>
         /// getter and setter gernic property GUID
         /// </summary>
-        public Guid Id { get; protected set; }
+        public int Id { get; protected set; }
 
         /// <summary>
         /// override equal to compare bettween two Entity Type entities 

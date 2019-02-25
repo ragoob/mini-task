@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\20190225055139_Initial.cs" />
+    <Compile Remove="Migrations\20190225055316_Initial.cs" />
+    <Compile Remove="Migrations\20190225211945_ReplaceGuidWithInt.cs" />
+    <Compile Remove="Migrations\20190225212102_ReplaceGuidWithint.cs" />
   </ItemGroup>
 
   <ItemGroup>

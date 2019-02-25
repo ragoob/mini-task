@@ -7,7 +7,7 @@ namespace Domain.Commands.Project
 {
     public class DeleteProjectCommand : ProjectCommand
     {
-        public DeleteProjectCommand(Guid id)
+        public DeleteProjectCommand(int id)
         {
             Id = id;
         }

@@ -34,12 +34,12 @@ namespace Data.Repositories
             return _entities;
         }
 
-        public TEntity GetById(Guid id)
+        public TEntity GetById(int id)
         {
             return _entities.Find(id);
         }
 
-        public void Remove(Guid id)
+        public void Remove(int id)
         {
             _entities.Remove(GetById(id));
         }

@@ -11,9 +11,9 @@ namespace ApplicationServices.Intefaces
 
         void Update(ProjectModel project);
 
-        void Delete(Guid id);
+        void Delete(int id);
 
-        ProjectModel GetById(Guid id);
+        ProjectModel GetById(int id);
 
         ProjectModel GetByName(string name);
 

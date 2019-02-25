@@ -7,16 +7,16 @@ namespace Domain.Events
 {
    public class AddNewProjectEvent : Event
     {
-        public AddNewProjectEvent(Guid id ,string name ,string description,bool isPrivate)
+        public AddNewProjectEvent(int id ,string name ,string description,bool isPrivate)
         {
-            Id = id;
+        
             Name = name;
             Description = description;
             IsPrivate = IsPrivate;
             AggregateId = id;
         }
 
-        public Guid Id { get; protected set; }
+        public int Id { get; protected set; }
         public string Name { get; protected set; }
 
         /// <summary>

@@ -8,7 +8,7 @@ namespace Domain.Commands.Project
 {
     public class UpdateProjectCommand : ProjectCommand
     {
-        public UpdateProjectCommand(Guid id, string name, string description, bool isPrivate)
+        public UpdateProjectCommand(int id, string name, string description, bool isPrivate)
         {
             Id = id;
             Name = name;

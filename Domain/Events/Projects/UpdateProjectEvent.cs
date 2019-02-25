@@ -7,7 +7,7 @@ namespace Domain.Events
 {
    public class UpdateProjectEvent : Event
     {
-        public UpdateProjectEvent(Guid id ,string name ,string description,bool isPrivate)
+        public UpdateProjectEvent(int id ,string name ,string description,bool isPrivate)
         {
             Id = id;
             Name = name;
@@ -16,7 +16,7 @@ namespace Domain.Events
             AggregateId = id;
         }
 
-        public Guid Id { get; protected set; }
+        public int Id { get; protected set; }
         public string Name { get; protected set; }
 
         /// <summary>
