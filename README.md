@@ -17,6 +17,7 @@ Mini task is open source Project written in .net core to handle simple and small
 <li> FluentValidator</li>
 <li>MediatR</li>
   </ul>
+  
 # what about Architecture:
 <ul>
 <li> Complete clean Architecture using with responsibility separation, segregation and concerns</li>
