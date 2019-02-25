@@ -18,3 +18,5 @@
 /.vs
 /ApplicationServices/obj
 /ApplicationServices/bin
+/EventBus/bin
+/EventBus/obj
