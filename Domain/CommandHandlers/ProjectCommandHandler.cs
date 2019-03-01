@@ -1,6 +1,6 @@
 ﻿using Core.Bus;
 using Core.Notifications;
-using Domain.Commands.Project;
+using Domain.Commands.Projects;
 using Domain.Interfaces;
 using System;
 using System.Threading;
@@ -35,7 +35,7 @@ namespace Domain.CommandHandlers
                 return Task.FromResult(false);
             }
 
-            var project = new Project(request.Id, request.Name, request.Description, request.IsPrivate);
+            var project = new Project(request.Id, request.Name, request.Description, request.IsPrivate,request.OrganizationId);
             
             _projectRepository.Update(project);
             if (Commit())
@@ -56,11 +56,11 @@ namespace Domain.CommandHandlers
                 return Task.FromResult(false);
             }
 
-            var project = new Project(default(int), request.Name, request.Description, request.IsPrivate);
+            var project = new Project(default(int), request.Name, request.Description, request.IsPrivate,request.OrganizationId);
             _projectRepository.Add(project);
             if (Commit())
             {
-                _bus.RaiseEvent(new ProjectAddedEvent(request.AggregateId, request.Name, request.Description, request.IsPrivate));
+                _bus.RaiseEvent(new ProjectAddedEvent(request.AggregateId, request.Name, request.Description, request.IsPrivate,request.OrganizationId));
 
             }
            

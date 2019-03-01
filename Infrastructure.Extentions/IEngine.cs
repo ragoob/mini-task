@@ -13,7 +13,7 @@ namespace Infrastructure.Extentions
 
         IEnumerable<T> ResolveAll<T>();
 
-
+        object ManualResolve(Type type);
         void Initialize(IServiceCollection services);
 
         IServiceProvider ConfigureServices(IServiceCollection services, IConfiguration configuration);

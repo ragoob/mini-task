@@ -1,4 +1,4 @@
-﻿using Domain.Commands.Project;
+﻿using Domain.Commands.Projects;
 using System;
 using System.Collections.Generic;
 using System.Text;

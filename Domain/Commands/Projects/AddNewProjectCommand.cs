@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Commands.Project
+namespace Domain.Commands.Projects
 {
     public class AddNewProjectCommand : ProjectCommand
     {

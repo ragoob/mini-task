@@ -1,4 +1,4 @@
-﻿using Domain.Commands.Project;
+﻿using Domain.Commands.Projects;
 using Domain.Interfaces;
 using Domain.Models;
 using FluentValidation;

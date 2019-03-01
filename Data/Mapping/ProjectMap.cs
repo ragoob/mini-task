@@ -27,8 +27,11 @@ namespace Data.Mapping
             builder.Property(p => p.Description)
                 .HasColumnType("nvarchar(500)")
                 .HasMaxLength(500);
-               
 
+            builder.HasOne(p => p.Organization)
+                .WithMany()
+                .HasForeignKey(p => p.OrganizationId)
+                .OnDelete(DeleteBehavior.Restrict);
                 
         }
     }
