@@ -20,3 +20,7 @@
 /ApplicationServices/bin
 /EventBus/bin
 /EventBus/obj
+/MiniTask.ProjectDetails
+/Web/wwwroot
+/Web/App_Data
+/Web/Plugins

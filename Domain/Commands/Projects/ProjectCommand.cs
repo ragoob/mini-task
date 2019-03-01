@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Commands.Project
+namespace Domain.Commands.Projects
 {
    public abstract class ProjectCommand : Command
     {
@@ -19,5 +19,9 @@ namespace Domain.Commands.Project
         /// getter or setter Project Pricvicy 
         /// </summary>
         public bool IsPrivate { get; protected set; }
+
+        public int OrganizationId { get; protected set; }
+
+        
     }
 }

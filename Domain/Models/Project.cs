@@ -7,13 +7,15 @@ namespace Domain.Models
 {
    public class Project : Entity
     {
-        public Project(int id ,string name ,string description,bool isPrivate)
+        public Project(int id ,string name ,string description,bool isPrivate,int organizationId)
         {
             Id = id;
             Name = name;
             Description = description;
             IsPrivate = IsPrivate;
-            
+            OrganizationId = organizationId;
+
+
         }
 
         /// <summary>
@@ -35,7 +37,9 @@ namespace Domain.Models
         /// </summary>
         public bool IsPrivate { get; private set; }
 
-     
+        public int OrganizationId { get; private set; }
+
+        public virtual Organization Organization { get; private set; }
 
 
     }

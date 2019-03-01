@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.Extentions
+namespace Core.Infrastructure
 {
     public class Singleton<T> : BaseSingleton
     {

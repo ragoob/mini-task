@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.Extentions
+namespace Core.Infrastructure
 {
    public interface IEngine
     {
@@ -13,7 +13,7 @@ namespace Infrastructure.Extentions
 
         IEnumerable<T> ResolveAll<T>();
 
-
+        object ManualResolve(Type type);
         void Initialize(IServiceCollection services);
 
         IServiceProvider ConfigureServices(IServiceCollection services, IConfiguration configuration);

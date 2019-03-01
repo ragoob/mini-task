@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Infrastructure.Extentions
+namespace Core.Infrastructure
 {
     public class EngineContext
     {
@@ -13,6 +13,7 @@ namespace Infrastructure.Extentions
             
             return Singleton<IEngine>.Instance ?? (Singleton<IEngine>.Instance = new Engine());
         }
+
 
         public static IEngine Current
         {
@@ -26,5 +27,7 @@ namespace Infrastructure.Extentions
                 return Singleton<IEngine>.Instance;
             }
         }
+
+        public static ITaskFileProvider DefaultFileProvider { get; set; }
     }
 }

@@ -7,13 +7,14 @@ namespace Domain.Events
 {
    public class ProjectAddedEvent : Event
     {
-        public ProjectAddedEvent(int id ,string name ,string description,bool isPrivate)
+        public ProjectAddedEvent(int id ,string name ,string description,bool isPrivate,int orgranizationId)
         {
         
             Name = name;
             Description = description;
             IsPrivate = IsPrivate;
             AggregateId = id;
+            OrganizationId = orgranizationId;
         }
 
         public int Id { get; protected set; }
@@ -27,5 +28,7 @@ namespace Domain.Events
         /// getter or setter Project Pricvicy 
         /// </summary>
         public bool IsPrivate { get; protected set; }
+
+        public int OrganizationId { get; set; }
     }
 }

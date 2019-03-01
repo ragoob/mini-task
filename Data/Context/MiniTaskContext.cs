@@ -6,6 +6,7 @@ using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Infrastructure.Extentions;
+using Core.Infrastructure;
 
 namespace Data.Context
 {

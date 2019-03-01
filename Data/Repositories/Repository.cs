@@ -10,10 +10,16 @@ using System.Text;
 
 namespace Data.Repositories
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly MiniTaskContext _miniTaskContext;
+        protected readonly DbContext _miniTaskContext;
         protected readonly DbSet<TEntity> _entities;
+
+        public Repository(DbContext defaultContext)
+        {
+            
+            _entities = defaultContext.Set<TEntity>();
+        }
 
         public Repository(MiniTaskContext miniTaskContext)
         {
