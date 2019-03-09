@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infrastructure.IOC", "infra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{DD5F7000-459A-48F0-A853-A687C9FC9A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniTask.ProjectDetails", "MiniTask.ProjectDetails\MiniTask.ProjectDetails.csproj", "{70D0B577-6C74-40A2-B455-F381B8692403}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{05813AD0-026E-472E-8673-48EABA7BE8C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,16 +61,13 @@ Global
 		{6DC9B844-3F77-4A36-BDAC-87CD3F1EF8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DC9B844-3F77-4A36-BDAC-87CD3F1EF8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DC9B844-3F77-4A36-BDAC-87CD3F1EF8E3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70D0B577-6C74-40A2-B455-F381B8692403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70D0B577-6C74-40A2-B455-F381B8692403}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70D0B577-6C74-40A2-B455-F381B8692403}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70D0B577-6C74-40A2-B455-F381B8692403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05813AD0-026E-472E-8673-48EABA7BE8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05813AD0-026E-472E-8673-48EABA7BE8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05813AD0-026E-472E-8673-48EABA7BE8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05813AD0-026E-472E-8673-48EABA7BE8C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{70D0B577-6C74-40A2-B455-F381B8692403} = {DD5F7000-459A-48F0-A853-A687C9FC9A71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {63740A8C-D251-47EA-B4B5-94F108CCEED3}

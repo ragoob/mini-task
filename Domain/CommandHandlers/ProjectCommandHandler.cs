@@ -40,7 +40,7 @@ namespace Domain.CommandHandlers
             _projectRepository.Update(project);
             if (Commit())
             {
-                _bus.RaiseEvent(new ProjectUpdatedEvent(request.Id, request.Name, request.Description, request.IsPrivate));
+                _bus.RaiseEvent(new ProjectUpdatedEvent(project.Id, request.Name, request.Description, request.IsPrivate));
                 
             }
 
@@ -60,7 +60,7 @@ namespace Domain.CommandHandlers
             _projectRepository.Add(project);
             if (Commit())
             {
-                _bus.RaiseEvent(new ProjectAddedEvent(request.AggregateId, request.Name, request.Description, request.IsPrivate,request.OrganizationId));
+                _bus.RaiseEvent(new ProjectAddedEvent(project.Id, request.Name, request.Description, request.IsPrivate,request.OrganizationId));
 
             }
            

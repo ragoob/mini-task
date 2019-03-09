@@ -1,4 +1,6 @@
 ﻿using Domain.Commands.Projects;
+using Domain.Interfaces;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,8 +12,10 @@ namespace Domain.Validation.Projects
     /// </summary>
     public class DeleteProjectCommandValidation : ProjectValidationCommand<DeleteProjectCommand>
     {
-        public DeleteProjectCommandValidation()
+        private readonly IRepository<Project> _repository;
+        public DeleteProjectCommandValidation(IRepository<Project> repository) : base(repository)
         {
+            _repository = repository;
             ValidateId();
         }
     }

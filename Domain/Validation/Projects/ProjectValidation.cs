@@ -10,6 +10,12 @@ namespace Domain.Validation.Projects
 {
     public abstract class ProjectValidationCommand<T> : AbstractValidator<T> where T : ProjectCommand 
     {
+        private readonly IRepository<Project> _repository;
+
+        public ProjectValidationCommand(IRepository<Project> repository)
+        {
+            _repository = repository;
+        }
         protected void ValidateName()
         {
             RuleFor(c => c.Name)
@@ -28,16 +34,16 @@ namespace Domain.Validation.Projects
             RuleFor(c => c.Id)
                 .NotEqual(0);
         }
-
+        
         protected void ValidateNameExist()
         {
             RuleFor(c => c.Name)
-                .Custom((n, c) =>
+                .Custom((n, context) =>
                 {
                     
-                    if (EngineContext.Current.Resolve<IRepository<Project>>()
-                    .GetFirstOrDefault(p=> p.Name == n) != null)
-                        c.AddFailure($"{n} is Exist type new one");
+                   
+                    if(_repository.GetFirstOrDefault(p=> p.Name == n) != null)
+                        context.AddFailure($"{n} is Exist type new one");
 
                 });
         }

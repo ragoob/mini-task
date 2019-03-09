@@ -15,6 +15,7 @@ namespace Domain.Events
             IsPrivate = IsPrivate;
             AggregateId = id;
             OrganizationId = orgranizationId;
+            Id = id;
         }
 
         public int Id { get; protected set; }

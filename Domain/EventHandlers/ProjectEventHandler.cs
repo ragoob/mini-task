@@ -1,4 +1,5 @@
-﻿using Domain.Events;
+﻿using Core.Infrastructure;
+using Domain.Events;
 using Infrastructure.Extentions;
 using MediatR;
 using System;
@@ -14,29 +15,33 @@ namespace Domain.EventHandlers
          INotificationHandler<ProjectUpdatedEvent>,
          INotificationHandler<ProjectDeletedEvent>
     {
+        private readonly IEventStore _eventStore;
+
+        public ProjectEventHandler(IEventStore eventStore)
+        {
+            _eventStore = eventStore;
+        }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="notification"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public Task Handle(ProjectAddedEvent notification, CancellationToken cancellationToken)
+        public  Task Handle(ProjectAddedEvent notification, CancellationToken cancellationToken)
         {
-           return SendEmailTask.Send($"new project Add {notification.Name}",$"new Project Added to ssystem" +
-                $" with name {notification.Name} </br> {notification.Description}","regoo707@gmail.com");
 
-
-             
+           return _eventStore.Save(notification);
+            
         }
 
-        public Task Handle(ProjectUpdatedEvent notification, CancellationToken cancellationToken)
+        public  Task Handle(ProjectUpdatedEvent notification, CancellationToken cancellationToken)
         {
-            return Task.CompletedTask;
+            return _eventStore.Save(notification);
         }
 
-        public Task Handle(ProjectDeletedEvent notification, CancellationToken cancellationToken)
+        public  Task Handle(ProjectDeletedEvent notification, CancellationToken cancellationToken)
         {
-            return Task.CompletedTask;
+            return _eventStore.Save(notification);
         }
     }
 }

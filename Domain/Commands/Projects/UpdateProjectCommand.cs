@@ -1,4 +1,5 @@
 ﻿
+using Core.Infrastructure;
 using Domain.Validation.Projects;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,11 @@ namespace Domain.Commands.Projects
 {
     public class UpdateProjectCommand : ProjectCommand
     {
+      
+        public UpdateProjectCommand()
+        {
+            
+        }
         public UpdateProjectCommand(int id, string name, string description, bool isPrivate)
         {
             Id = id;
@@ -17,7 +23,7 @@ namespace Domain.Commands.Projects
         }
         public override bool IsValid()
         {
-            ValidationResult = new UpdateProjectCommandValidation().Validate(this);
+            ValidationResult = EngineContext.Current.Resolve<UpdateProjectCommandValidation>().Validate(this);
             return ValidationResult.IsValid;
         }
     }

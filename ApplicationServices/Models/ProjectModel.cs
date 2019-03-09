@@ -22,5 +22,7 @@ namespace ApplicationServices.Models
         /// </summary>
         public bool IsPrivate { get;  set; }
 
+        public int OrganizationId { get; set; }
+
     }
 }

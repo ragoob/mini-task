@@ -26,7 +26,7 @@ namespace ApplicationServices.Services
         {
             
             // you can use automapper to map source and destination 
-            var AddNewCommand = new AddNewProjectCommand(project.Name, project.Description, project.IsPrivate);
+            var AddNewCommand = new AddNewProjectCommand(project.Name, project.Description, project.IsPrivate,project.OrganizationId);
             _bus.SendCommand(AddNewCommand);
         }
 

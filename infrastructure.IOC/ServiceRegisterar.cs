@@ -7,6 +7,7 @@ using Core.Notifications;
 using Core.Plugins;
 using Data.Context;
 using Data.Repositories;
+using Data.Repositories.EventSources;
 using Data.UnityOfWork;
 using Domain.CommandHandlers;
 using Domain.Commands.Organizations;
@@ -14,6 +15,7 @@ using Domain.Commands.Projects;
 using Domain.EventHandlers;
 using Domain.Events;
 using Domain.Interfaces;
+using Domain.Validation.Projects;
 using infrastructure.Buses;
 using Infrastructure.Extentions;
 using MediatR;
@@ -40,6 +42,9 @@ namespace infrastructure.IOC
             services.AddDbContext<MiniTaskContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<EventSourceContext>(options =>
+          options.UseSqlServer(configuration.GetConnectionString("EventConnection")));
+
             services.AddScoped<IMediatorHandler, Bus>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IProjectService, ProjectService>();
@@ -58,10 +63,15 @@ namespace infrastructure.IOC
             services.AddScoped<IRequestHandler<UpdateOrganizationCommand, bool>, OrganizationCommandHandler>();
             services.AddScoped<IRequestHandler<DeleteOrganizationCommand, bool>, OrganizationCommandHandler>();
             services.AddScoped<IUnitOfWork, UntitOfWork>();
+            services.AddScoped<IEventStore, EventStore>();
             services.AddScoped<IPluginInfoParser, PluginInfoParser>();
             services.AddScoped<ITaskFileProvider, TaskFileProvider>();
             services.AddScoped<IPluginService, PluginService>();
             services.AddScoped<ITypeFinder, TypeFinder>();
+            services.AddScoped<UpdateProjectCommandValidation>();
+            services.AddScoped<DeleteProjectCommandValidation>();
+            services.AddScoped<AddNewProjectCommandValidation>();
+
             services.AddDbContext<MiniTaskContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             
