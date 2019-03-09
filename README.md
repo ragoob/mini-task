@@ -35,4 +35,5 @@ Mini task is open source Project written in .net core to handle simple and small
 <li>CQRS </li>
 <li>Unit of work </li>
 <li> repository pattern </li>
+  <li>Event Source</li>
  </ul>
