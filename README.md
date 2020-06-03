@@ -31,7 +31,6 @@ Mini task is open source Project written in .net core to handle simple and small
 # what about Architecture:
 <ul>
 <li> Complete clean Architecture  with responsibility separation and concerns</li>
-<li> DDD</li>
 <li>CQRS </li>
 <li>Unit of work </li>
 <li> repository pattern </li>
